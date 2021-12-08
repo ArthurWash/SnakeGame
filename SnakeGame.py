@@ -8,7 +8,6 @@ pygame.init()
 white = (255, 255, 255)
 black = (0, 0, 0)
 neon_green = (57, 255, 20)
-dark_green = (0,100,0)
 
 # Settings
 dis_width = 600
@@ -20,7 +19,7 @@ pygame.display.set_caption('Snake Game by Washdude')
 clock = pygame.time.Clock()
 
 snake_block = 10
-snake_speed = 15
+snake_speed = 30
 
 # Fonts
 font_style = pygame.font.SysFont("San Francisco", 25)
@@ -62,7 +61,7 @@ def gameLoop():
 
         while game_close == True:
             dis.fill(black)
-            message("Game Over :( Press Q-Quit or C-Play Again", neon_green)
+            message("""Game Over :( | Press Q-Quit or C-Play Again""", neon_green)
             Your_score(Length_of_snake - 1)
             pygame.display.update()
 
@@ -97,7 +96,7 @@ def gameLoop():
         x1 += x1_change
         y1 += y1_change
         dis.fill(black)
-        pygame.draw.rect(dis, dark_green, [foodx, foody, snake_block, snake_block])
+        pygame.draw.rect(dis, neon_green, [foodx, foody, snake_block, snake_block])
         snake_Head = []
         snake_Head.append(x1)
         snake_Head.append(y1)
